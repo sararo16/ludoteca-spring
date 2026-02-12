@@ -1,0 +1,7 @@
+2026-02-03T16:07:32.419Z [INFO] Initializing project configuration...
+2026-02-03T16:07:32.422Z [INFO] Project c:\Users\sarrodri\Proyectos\ludoteca-Springboot is a maven project, try to get java version from pom.xml
+2026-02-03T16:07:32.426Z [INFO] Project java version: 17
+2026-02-03T16:07:32.428Z [INFO] Maven project detected.
+2026-02-03T16:07:32.430Z [INFO] Build tool type: mvnw
+2026-02-03T16:07:32.461Z [ERROR] JDK is not provided or detected for Java 17.
+2026-02-03T16:08:26.099Z [ERROR] Failed to prepare project configuration or init upgrade options: Canceled.
