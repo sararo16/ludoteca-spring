@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b241604-8439-4d03-93c8-9319afd4278a" name="Changes" comment="subir">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/PrestamoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/PrestamoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/Prestamo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/PrestamoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/PrestamoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/Prestamo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/Prestamo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.class" afterDir="false" />
-    </list>
+    <list default="true" id="5b241604-8439-4d03-93c8-9319afd4278a" name="Changes" comment="subir" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +173,7 @@
       <workItem from="1770792715310" duration="9748000" />
       <workItem from="1770880124617" duration="11020000" />
       <workItem from="1770980600831" duration="5202000" />
-      <workItem from="1771313584715" duration="3303000" />
+      <workItem from="1771313584715" duration="3724000" />
     </task>
     <task id="LOCAL-00001" summary="subir">
       <option name="closed" value="true" />
@@ -203,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770909461508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="subir">
+      <option name="closed" value="true" />
+      <created>1771320085610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771320085610</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
