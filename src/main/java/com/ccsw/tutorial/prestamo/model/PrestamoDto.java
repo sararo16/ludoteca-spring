@@ -1,26 +1,30 @@
 
 /*
-* Este DTO se devuelve al front. mejor no devolver la entidad completa
-* para no acoplarla al modelo de datos internos y ademas se necesita
-* devolver campos derivados (juego, cliente)
+* Este DTO (Data Transfer Object) expone prestamos hacia el front
+* Evita devolver la entidad directamente (previniendo problemas de lazy loading /campos internos)
+* Incluye campos derivados o de presentacion sin obligar al front a hacer llamadas adicionales
+* USO: se devuelve en respuesta al controller, puede usarse como payload de entrada
  */
+
 
 package com.ccsw.tutorial.prestamo.model;
 import java.time.LocalDate;
 
 public class PrestamoDto {
 
+    //identificador del prestamo
      private Long id;
 
-     //se identifica el juego y se manda tambn el nombre para pintar la tabla
+     //identificador del juego asociado que permite operar desde el front
      private Long gameId;
+     //nombre del juego(campo de conveniencia para pintar la tabla)
      private String gameName;
 
      //lo mismo con cliente
      private Long clientId;
      private String clientName;
 
-     //fechas inclusivas
+     //fechas inicio y fin del prestamo
      private LocalDate startDate;
      private LocalDate endDate;
 

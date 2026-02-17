@@ -1,7 +1,7 @@
 
 /*
-* Controlador REST de prestamos.
-* Endpoints: POST (filtros), POST(crear), PUT (editar), DELETE (eliminar)
+* Controlador REST de prestamos
+* Endpoints: POST (filtros), POST (crear), PUT(editar), DELETE (eliminar)
  */
 
 package com.ccsw.tutorial.prestamo;
@@ -19,17 +19,19 @@ import com.ccsw.tutorial.prestamo.model.PrestamoSearchDto;
 
 
     @RestController
-    @RequestMapping ("api/prestamos")
-    @CrossOrigin (origins="http://localhost:4200", allowCredentials = "true") //habilitan las llamadas desde el front
+    @RequestMapping ("api/prestamos") //prefijo comun para todos los endpoints
+    @CrossOrigin (origins="http://localhost:4200", allowCredentials = "true") //habilitan las llamadas desde el front con cookies/credenciales
 
     public class PrestamoController {
 
         @Autowired
-        private PrestamoService prestamoService;
+        private PrestamoService prestamoService; //inyeccion del servicio de negocio
 
         //búsqueda paginada con filtros opcionales
         @PostMapping("/search")
+        //recibo un payload con filtros opcionales + paginacion
         public Page<PrestamoDto> search(@RequestBody PrestamoSearchDto dto) {
+            //delego la logica al servicio
             return prestamoService.search(dto);
         }
 
@@ -37,10 +39,10 @@ import com.ccsw.tutorial.prestamo.model.PrestamoSearchDto;
         @PostMapping
         public PrestamoDto create (@RequestBody PrestamoSaveDto dto){
             dto.setId(null);
-            return prestamoService.save(dto);
+            return prestamoService.save(dto); //delego al servicio para validar reglas y guardar
         }
 
-        //Edicion: el id "oficial" viene de la ruta no del body
+        //Edicion: el id "real" viene en la URL, se sobreescribe por seguridad
         @PutMapping ("/{id}")
         public PrestamoDto update (@PathVariable Long id, @RequestBody PrestamoSaveDto dto){
             dto.setId(id);

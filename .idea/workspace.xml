@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b241604-8439-4d03-93c8-9319afd4278a" name="Changes" comment="subir" />
+    <list default="true" id="5b241604-8439-4d03-93c8-9319afd4278a" name="Changes" comment="subir">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/PrestamoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/PrestamoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/Prestamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/PrestamoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/PrestamoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/Prestamo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/Prestamo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSaveDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/model/PrestamoSearchDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/repository/PrestamoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ccsw/tutorial/prestamo/service/PrestamoSpecifications.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,28 +61,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "JUnit.GameIT.modifyWithExistIdShouldModifyGame.executor": "Run",
-    "JUnit.GameIT.modifyWithNotExistIdShouldThrowException.executor": "Run",
-    "JUnit.GameIT.saveWithoutIdShouldCreateNewGame.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.TutorialApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sarrodri/Proyectos/ludoteca-Springboot/pom.xml",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameIT.modifyWithExistIdShouldModifyGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameIT.modifyWithNotExistIdShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameIT.saveWithoutIdShouldCreateNewGame.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TutorialApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sarrodri/Proyectos/ludoteca-Springboot/pom.xml&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sarrodri\Proyectos\ludoteca-Springboot\src\main\resources" />
@@ -170,7 +191,9 @@
       <workItem from="1770633369907" duration="11888000" />
       <workItem from="1770708336859" duration="9086000" />
       <workItem from="1770792715310" duration="9748000" />
-      <workItem from="1770880124617" duration="10339000" />
+      <workItem from="1770880124617" duration="11020000" />
+      <workItem from="1770980600831" duration="5202000" />
+      <workItem from="1771313584715" duration="3303000" />
     </task>
     <task id="LOCAL-00001" summary="subir">
       <option name="closed" value="true" />
@@ -196,6 +219,11 @@
     <option name="TAB_STATES">
       <map>
         <entry key="5e68acd0-b91b-49fc-b631-0ac1faf0b622">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
           <value>
             <State />
           </value>

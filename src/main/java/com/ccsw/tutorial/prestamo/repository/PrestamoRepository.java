@@ -1,7 +1,7 @@
 
 /*
-* Repositorio JPA para prestamo
-* Extiendo JpaSpecificationExecturor para poder aplicar filtros dinamicos
+* Repositorio JPA para la entidad prestamo
+* CRUD basico heredado de JpaRepository, busquedas con filtros dinamicos, consultas
  */
 
 package com.ccsw.tutorial.prestamo.repository;
@@ -19,16 +19,16 @@ import com.ccsw.tutorial.prestamo.model.Prestamo;
 public interface PrestamoRepository extends JpaRepository<Prestamo, Long>,
         JpaSpecificationExecutor<Prestamo>{
 
-    /**
-     * Declaro explicitamente findAll para poder anotar @entityGraph
-     *  y asi forzar que game y client se carguen en la misma query
-     */
-
+    /*
+    *  Busqueda paginada con filtros dinamicos.
+    * @EntityGraph fuerza a JPA a realizar un fetch de game y client en la misma query
+    * evitando cargas perezosas posteriores que multiplican las consultas (N+1)
+    */
     @EntityGraph (attributePaths = {"game","client"})
     Page<Prestamo> findAll(Specification<Prestamo> spec, Pageable pageable);
 
     /*
-    * Valido si existe un prestamo del mismo juego que solape con el rango dado
+    * Valido si existe un prestamo del mismo juego que solape con el rango de fechas proporcionado
      */
     @Query("""
       select count(p) > 0
@@ -44,9 +44,10 @@ public interface PrestamoRepository extends JpaRepository<Prestamo, Long>,
             @Param("excludeId") Long excludeId); //cuando edito , ignoro mi propio registro
 
     /*
-    * Devuelve los prestamos que tiene el cliente ACTIVOS en un dia concreto.
-    * Se usa para validar el limite "maximo 2 juegos por dia"
-     */
+    * Cuenta cuantos prestamos activos tiene un cliente en un dia concreto
+    * se usa para validar la regla de negocio: max 2 juegos por dia
+    * BETWEEN -- en dates es inclusivo en ambos extremos
+     * */
 
     @Query("""
           select count(p)

@@ -1,9 +1,8 @@
 
 /*
 * Implementacion de las reglas de negocio:
-* paginacion/filtrado con Specifications
-* validaciones de fechas y reglas de dominio: fin >=inicio, rango 14 dias
-* ,un juego no prestado a 2 clientes mismo dia, un cliente no puede tener mas 2 prestamos al dia
+* Paginacion/filtrado con specification
+* validaciones de fechas y reglas de dominio
  */
 
 package com.ccsw.tutorial.prestamo.service;
@@ -32,6 +31,7 @@ import com.ccsw.tutorial.prestamo.repository.PrestamoRepository;
 @Service
 public class PrestamoServiceImpl implements PrestamoService {
 
+    //inyeccion de dependencias de repositorios necesarios para la logica
     @Autowired
     private PrestamoRepository prestamoRepository;
 
@@ -42,19 +42,21 @@ public class PrestamoServiceImpl implements PrestamoService {
     private ClientRepository clientRepository;
 
     /*
-    * Busqueda paginada. compongo el specification con los filtros que vengan.
-    * Retorno DTO mapeado para que el front pinte nombres sin mas llamadas
+    * busqueda paginada. compongo el specification con los filtros que vengan (opcional)
+    * Retorno DTO mapeado para que el front pinte nombres sin llamadas extra
      */
     @Override
     public Page<PrestamoDto> search (PrestamoSearchDto dto) {
+       //construccion del pageable a partir de page/size/sort del DTO de busqueda
         Pageable pageable = PageRequest.of(dto.getPage(),dto.getSize(),
                 sortFrom(dto.getSort()));
 
+        // composicion de specification dinamico (si no hay filtro null)
         Specification <Prestamo> spec=Specification
                 .where(PrestamoSpecifications.byGameId(dto.getGameId()))
                 .and(PrestamoSpecifications.byClientId(dto.getClientId()))
                 .and (PrestamoSpecifications.byDate(dto.getDate()));
-
+        //ejecuto la busqueda paginada y mapeo entidad --> dto
         var page = prestamoRepository.findAll(spec, pageable);
         return page.map(this::toDto);
     }
@@ -67,11 +69,11 @@ public class PrestamoServiceImpl implements PrestamoService {
     @Transactional
     public PrestamoDto save (PrestamoSaveDto dto) {
 
-        //VALIDACIONES DE ENTRADA
+        //VALIDACIONES DE ENTRADA: fechas no nulas y orden correcto
         if (dto.getStartDate()==null || dto.getEndDate()==null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La fecha fin no puede ser anterior a la fecha de inicio");
         }
-        //max 14 dias (cuenta inclusivo por eso sumo 1)
+        //max 14 dias (computo inclusivo por eso + 1)
         long days= ChronoUnit.DAYS.between(dto.getStartDate(),dto.getEndDate())+1;
         if (days>14){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"El periodo máximo de préstamo es de 14 días");
@@ -83,10 +85,10 @@ public class PrestamoServiceImpl implements PrestamoService {
         Client client = clientRepository.findById(dto.getClientId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Cliente inexistente"));
 
-        //excludeId-- si estoy editando quiero ignorarme las comprobaciones
+        //excludeId-- si estoy editando, ignoro mi propio registro en comporbaciones
         Long excludeId=dto.getId();
 
-        //REGLA 1: no solape el mismo juego
+        //REGLA 1: el mismo juego no puede solaparse en las fechas indicadas
         boolean overlapGame=prestamoRepository.existsOverlapForGame(
                 game.getId(),
                 dto.getStartDate(),
@@ -98,29 +100,29 @@ public class PrestamoServiceImpl implements PrestamoService {
         throw new ResponseStatusException(HttpStatus.CONFLICT,"Ese juego ya esta prestado en las fechas indicadas");
         }
 
-        //REGLA 2: maximo 2 prestamos por cliente y dia
+        //REGLA 2: maximo 2 prestamos por cliente y dia (se comprueba dia a dia en el rango)
         LocalDate d=dto.getStartDate();
         while (!d.isAfter(dto.getEndDate())){
             long count = prestamoRepository.countClientPrestamoOnDay(client.getId(),d,excludeId);
-        //si ya tiene 2, añadir este 3 para ese dia concreto -- rechazo
+        //si ya tiene 2, añadir este seria el 3 para ese dia  --> rechazo
             if (count >=2){
                 throw new ResponseStatusException(HttpStatus.CONFLICT,"El cliente supera el máximo de 2 préstamos para el dia: "+d);
             }
             d=d.plusDays(1);
         }
-        //Persistencia (crear/editar)
+        //Persistencia: crear o editar (si id viene null --> alta si no, buscar y editar)
         Prestamo entity=(dto.getId()==null)
               ? new Prestamo()
               : prestamoRepository.findById(dto.getId())
                       .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Préstamo no existe"));
 
-        //asigno relaciones y fechas
+        //asigno relaciones y fechas desde el dto
         entity.setGame(game);
         entity.setClient(client);
         entity.setStartDate(dto.getStartDate());
         entity.setEndDate(dto.getEndDate());
 
-        //guardo y devuelvo DTO
+        //guardo en bbdd y transformo a DTO de salida
         entity=prestamoRepository.save(entity);
         return toDto(entity);
     }
@@ -135,10 +137,10 @@ public class PrestamoServiceImpl implements PrestamoService {
         prestamoRepository.deleteById(id);
     }
 
-    //Helpers privados
+    //Helpers privados (no forman parte de la logica, siven de apoyo a la implementacion)
     /*
     * Construyo el Sort a partir de una cadena "campo, asc/desc"
-    * Si no viene bien formada, id asc
+    * Si no viene bien formada --> id asc
      */
     private Sort sortFrom(String sort){
         if (sort == null ||sort.isBlank()) return Sort.by("id").ascending();
@@ -150,8 +152,8 @@ public class PrestamoServiceImpl implements PrestamoService {
     }
 
     /*
-    *Mapeo entidad -- DTO de salida
-    * Ajusto getters a mis entidades reales:
+    *Mapeo entidad --> DTO de salida
+    * Ajusta getters a las entidades reales (title/name)
      */
     private PrestamoDto toDto(Prestamo prestamo) {
         PrestamoDto dto = new PrestamoDto();

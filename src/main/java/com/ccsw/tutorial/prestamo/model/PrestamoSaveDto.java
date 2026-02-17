@@ -1,9 +1,10 @@
 
 /*
-* Payload para crear/editar un prestamo
-* en alta, id= null.
-* en edicion, id viene en la URL y se resetea con el servicio/controlador
- */
+* DTO de entrada (payload: info que viaja dentro de una peticion http) usado para crear o editar un prestamo
+* PROPOSITO-- recoger los datos enviados por el front en operaciones de alta o edicion/evitar exponer directamente la entidad
+* ESCENARIOS -- alta(campo id viene a null), EDICION (id real se recoge desde la URL back sobreescribe el valor)
+*/
+
 
 package com.ccsw.tutorial.prestamo.model;
 
@@ -11,11 +12,16 @@ import java.time.LocalDate;
 
 public class PrestamoSaveDto {
 
-    private Long id;         // null en alta
-    private Long gameId; //obligatorio
-    private Long clientId; //obligatorio
-    private LocalDate startDate; //obligatorio
-    private LocalDate endDate; //obligatorio
+    //null en alta, en edicion se ignora y se usa el id de la URL
+    private Long id;
+    //identificador del juego
+    private Long gameId;
+    //identificador del cliente
+    private Long clientId;
+    //fecha inicio prestamo
+    private LocalDate startDate;
+    //fecha fin prestamo
+    private LocalDate endDate;
 
     //getter y setter
     public Long getId() {

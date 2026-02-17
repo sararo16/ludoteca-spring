@@ -1,6 +1,10 @@
+/*
+* Entidad de dominio que representa un prestamo de un juego a un cliente
+* Mapea la tabla prestamos en la base de datos
+* Persistir las relaciones con Game y Client
+* Almacenar el periodo de prestamo
+ */
 
-//Entidad q¡en la que se representa un prestamo con su juego, cliente, fecha inicio y fin
-//Se usa LocalDate porque el dominio funciona por dias
 package com.ccsw.tutorial.prestamo.model;
 
 import java.time.LocalDate;
@@ -16,7 +20,7 @@ import jakarta.persistence.*;
 
 public class Prestamo {
 
-    //PK , se usa identity para incrementar
+    //PK , se usa identity para incrementar el id automaticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,18 +41,18 @@ public class Prestamo {
     /*
     * Relacion N-1 con Client. Un prestamo siempre asociado a un cliente
     * Optional = false -- no permito prestamos sin cliente
-    * fetch=LAZY -- optimizo la carga
+    * fetch=LAZY --  para optimizar la recuperacion
     * @JoinColumn -- la FK se llama client__id
      */
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id")
     private Client client;
 
-    //fecha de inicio del prestamo
+    //fecha de inicio del prestamo (obligatoria)
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
-    //fecha fin del prestamo
+    //fecha fin del prestamo (obligatoria)
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 

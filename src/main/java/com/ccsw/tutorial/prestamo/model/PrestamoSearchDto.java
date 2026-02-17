@@ -1,7 +1,7 @@
 
 /*
-* Payload que recibo para buscar con filtros y paginacion.
-* todos los filtros son opcionales. si no viene uno, no se aplica
+* DTO de busqueda que recibe el back para filtrar prestamos y aplicar paginacion. payload de ENTRADA
+* Permite al front buscar prestamos aplicando filtros opcionales, centralizar la paginacion y el orden
  */
 
 package com.ccsw.tutorial.prestamo.model;
